@@ -1,0 +1,11 @@
+<% unless notice.nil? %>
+    <div class="notice">
+      <p><%= notice %></p>
+    </div>
+<% end %>
+
+<% content_for :title do %>
+    Book: <%= @book.title %>
+<% end %>
+
+

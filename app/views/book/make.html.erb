@@ -1,0 +1,27 @@
+<% content_for :title do %>
+    Add new book
+<% end %>
+
+<%= form_for(@book, :url => url_for(:controller => :book, :action => :add)) do |f| %>
+    <% if @book.errors.any? %>
+        <div id="error_container">
+          <h2><%= pluralize(@book.errors.count, "error") %> prevented the addition of this Book</h2>
+          <ul>
+            <% @book.errors.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <fieldset>
+      <legend>Title</legend>
+      <%= f.text_field :title %>
+    </fieldset>
+    <fieldset>
+      <legend>Author</legend>
+      <%= f.text_field :author %>
+    </fieldset>
+
+    <%= f.button %>
+<% end %>

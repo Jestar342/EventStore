@@ -1,0 +1,51 @@
+#user_controls {
+  position: fixed;
+  right: 1em;
+  top: 0pt;
+  color: white;
+  margin-top: -1.5em;
+  padding: 0pt;
+  box-shadow: none;
+
+  a {
+    font-size: 10pt;
+
+    &:visited {
+      color: white;
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &ul, &p {
+    border-radius: 0pt 0pt 4pt 4pt;
+    background-color: #00006a;
+    border: 3px solid #0000bb;
+    border-top: none;
+    margin: 0pt;
+  }
+
+  ul {
+    float: left;
+    list-style-position: inside;
+    list-style: none;
+    padding: 0em 0.5em;
+    margin: 0pt;
+    min-width: 12em;
+    li {
+      padding: 0.25em 0em;
+    }
+  }
+
+  p {
+    position: absolute;
+    padding: 0pt 0.5em;
+    margin-top: 2.35em;
+    right: 2em;
+    width: 7em;
+    font-size: 8pt;
+    text-align: center;
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EventStore<%= (" - " + yield(:title)) if content_for? :title %></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+</head>
+<body>
+
+<div id="user_controls">
+  <ul>
+    <li><%= link_to("Add new book", :controller => :book, :action => :make) %></li>
+  </ul>
+  <p id="menu_clicker">User controls</p>
+</div>
+
+<% if content_for? :title %>
+    <h1 id="title">
+      <%= yield :title %>
+    </h1>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
