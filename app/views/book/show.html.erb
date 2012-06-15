@@ -8,4 +8,12 @@
     Book: <%= @book.title %>
 <% end %>
 
-
+<div class="availability">
+  <p>Availability:
+    <% if @book.available? %>
+        <span class="available">Available</span>
+    <% else %>
+        <span class="borrowed">Borrowed</span>
+    <% end %>
+  </p>
+</div>

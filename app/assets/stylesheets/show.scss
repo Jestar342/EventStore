@@ -1,0 +1,21 @@
+.availability {
+  width: 25em;
+  height: 3em;
+  margin: auto;
+  text-align: center;
+  margin-top: 5em;
+
+  p {
+    line-height: 1em;
+  }
+
+  .available, .borrowed {
+    font-weight: bold;
+  }
+  .available {
+    color: green;
+  }
+  .borrowed {
+    color: red;
+  }
+}

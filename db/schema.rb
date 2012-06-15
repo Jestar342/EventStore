@@ -11,11 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608191821) do
+ActiveRecord::Schema.define(:version => 20120615101608) do
 
   create_table "books", :force => true do |t|
-    t.string "title",  :null => false
-    t.string "author"
+    t.string  "title",                       :null => false
+    t.string  "author"
+    t.boolean "available", :default => true
   end
 
   create_table "serialised_aggregates", :force => true do |t|

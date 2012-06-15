@@ -3,11 +3,13 @@
 <% end %>
 
 <% if @books.any? %>
-    <ul id="book_list">
-      <% @books.each do |book| %>
-          <li class="book_item"><%= link_to book.title, book %></li>
-      <% end %>
-    </ul>
+    <div>
+      <ul id="book_list">
+        <% @books.each do |book| %>
+            <li class="book_item"><%= link_to book.title, book %></li>
+        <% end %>
+      </ul>
+    </div>
 <% else %>
     <div class="notice">
       <h1>No books in stock!</h1>

@@ -8,7 +8,7 @@
   <%= yield :head %>
 </head>
 <body>
-
+<%= link_to "Home", root_path %>
 <div id="user_controls">
   <ul>
     <li><%= link_to("Add new book", :controller => :book, :action => :make) %></li>

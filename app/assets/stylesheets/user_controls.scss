@@ -9,9 +9,9 @@
 
   a {
     font-size: 10pt;
+    color: white;
 
     &:visited {
-      color: white;
       text-decoration: none;
     }
     &:hover {
@@ -44,7 +44,7 @@
     padding: 0pt 0.5em;
     margin-top: 2.35em;
     right: 2em;
-    width: 7em;
+    width: 8em;
     font-size: 8pt;
     text-align: center;
   }
