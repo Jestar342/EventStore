@@ -3,6 +3,7 @@ require_relative '../../lib/repositories/aggregate_repository'
 require_relative '../../lib/broadcasters/event_broadcaster'
 require_relative '../models/event_listeners/book_created_listener'
 require_relative '../models/event_listeners/book_borrowed_listener'
+require_relative '../models/event_listeners/book_returned_listener'
 
 class BookController < ApplicationController
   attr_writer :aggregate_repository
@@ -10,8 +11,9 @@ class BookController < ApplicationController
   def aggregate_repository
     @aggregate_repository ||= -> {
       broadcaster = EventStore::EventBroadcaster.new
-      broadcaster.register_listener ::BookCreatedListener.new
-      broadcaster.register_listener ::BookBorrowedListener.new
+      broadcaster.register_listener BookCreatedListener.new
+      broadcaster.register_listener BookBorrowedListener.new
+      broadcaster.register_listener BookReturnedListener.new
       EventStore::AggregateRepository.new(
           event_broadcaster: broadcaster
       )
@@ -49,13 +51,20 @@ class BookController < ApplicationController
   end
 
   def borrow
-    id = params[:id]
-    book = aggregate_repository.find_aggregate_with_id id
+    book = aggregate_repository.find_aggregate_with_id params[:id]
     book.borrow
     aggregate_repository.save book
-    redirect_to controller: :book, action: :show, id: id, notice: "Book #{book.title} borrowed"
+    redirect_to_show book.id, "Book #{book.title} borrowed"
   end
 
   def return
+    book = aggregate_repository.find_aggregate_with_id params[:id]
+    book.return
+    aggregate_repository.save book
+    redirect_to_show book.id, "Book #{book.title} returned"
+  end
+
+  def redirect_to_show(id, notice)
+    redirect_to controller: :book, action: :show, id: id, notice: notice
   end
 end

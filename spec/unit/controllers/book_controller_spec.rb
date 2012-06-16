@@ -56,10 +56,11 @@ describe BookController, :type => :controller do
 
         book_id = '123'
         book = mock("book")
+        book.should_receive(:id).and_return book_id
         aggregate_repo.should_receive(:find_aggregate_with_id).with(book_id).and_return book
         aggregate_repo.should_receive(:save).with(book)
 
-        book.should_receive(:borrow).and_return(true)
+        book.should_receive(:borrow)
         book.should_receive(:title).and_return('title')
 
         get 'borrow', id: book_id
@@ -69,9 +70,23 @@ describe BookController, :type => :controller do
   end
 
   describe "GET 'return'" do
-    it "returns http success" do
-      get 'return'
-      response.should be_success
+    it "should return book" do
+      book_id = '123'
+      book = mock("book")
+      book.should_receive(:id).and_return book_id
+
+      aggregate_repo = mock("aggregate repo")
+      aggregate_repo.should_receive(:find_aggregate_with_id).with(book_id).and_return book
+      aggregate_repo.should_receive(:save).with(book)
+
+      @controller.aggregate_repository = aggregate_repo
+
+      book.should_receive(:return)
+      book.should_receive(:title).and_return('title')
+
+      get 'return', id: book_id
+
+      response.should redirect_to controller: :book, action: :show, id: book_id, notice: "Book title returned"
     end
   end
 

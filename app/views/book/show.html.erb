@@ -1,6 +1,6 @@
-<% unless notice.nil? %>
+<% unless params[:notice].nil? %>
     <div class="notice">
-      <p><%= notice %></p>
+      <p><%= params[:notice] %></p>
     </div>
 <% end %>
 
@@ -19,6 +19,7 @@
 </div>
 
 <div class="book_controls">
+  <h4>Options:</h4>
   <% if @book.available? then %>
     <%= link_to "Borrow", controller: :book, action: :borrow %>
   <% else %>

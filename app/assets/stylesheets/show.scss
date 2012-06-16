@@ -19,3 +19,29 @@
     color: red;
   }
 }
+
+.book_controls {
+  width: 15em;
+  margin: 2em auto 0em auto;
+  text-align: center;
+  h4 {
+    margin: 0pt;
+    padding: 0pt;
+    font-weight: normal;
+    font-size: 10pt;
+    color: #666;
+  }
+  a {
+    border: 1px solid #00006a;
+    padding: 2pt;
+    border-radius: 3pt;
+    margin: 3pt auto;
+    display: block;
+    width: 4em;
+    padding: 0pt 2pt;
+    &:hover {
+      color: white;
+      background-color: #00006a;
+    }
+  }
+}

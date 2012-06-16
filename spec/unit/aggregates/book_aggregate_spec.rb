@@ -31,4 +31,21 @@ describe BookAggregate do
       @event.class.should equal BookBorrowed
     end
   end
+
+  describe BookReturned do
+    before :all do
+      @book = BookAggregate.new id: 123, title: 'title', author: 'author', available: false
+      @book.return
+      @event = @book.new_events.first
+    end
+
+    it "should set book available" do
+      @book.available?.should == true
+    end
+
+    it "should record BookReturned event" do
+      @event.class.should == BookReturned
+    end
+
+  end
 end

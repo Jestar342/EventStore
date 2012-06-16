@@ -1,6 +1,7 @@
 require_relative '../../../lib/aggregate'
 require_relative '../events/book_created'
 require_relative '../events/book_borrowed'
+require_relative '../events/book_returned'
 
 class BookAggregate
   include EventStore::Aggregate
@@ -16,6 +17,11 @@ class BookAggregate
   def borrow
     raise "Cannot borrow an already borrowed book" unless available?
     record_event BookBorrowed.new aggregate_id: id
+  end
+
+  def return
+    raise "Cannot return an already returned book" if available?
+    record_event BookReturned.new aggregate_id: id
   end
 
   def available?
