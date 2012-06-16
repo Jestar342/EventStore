@@ -17,3 +17,11 @@
     <% end %>
   </p>
 </div>
+
+<div class="book_controls">
+  <% if @book.available? then %>
+    <%= link_to "Borrow", controller: :book, action: :borrow %>
+  <% else %>
+    <%= link_to "Return", controller: :book, action: :return %>
+  <% end %>
+</div>

@@ -49,9 +49,22 @@ describe BookController, :type => :controller do
   end
 
   describe "GET 'borrow'" do
-    it "returns http success" do
-      get 'borrow'
-      response.should be_success
+    describe "available book" do
+      it "returns http success" do
+        aggregate_repo = mock("aggregate repository")
+        @controller.aggregate_repository = aggregate_repo
+
+        book_id = '123'
+        book = mock("book")
+        aggregate_repo.should_receive(:find_aggregate_with_id).with(book_id).and_return book
+        aggregate_repo.should_receive(:save).with(book)
+
+        book.should_receive(:borrow).and_return(true)
+        book.should_receive(:title).and_return('title')
+
+        get 'borrow', id: book_id
+        response.should redirect_to action: :show, controller: :book, id: book_id, notice: "Book title borrowed"
+      end
     end
   end
 

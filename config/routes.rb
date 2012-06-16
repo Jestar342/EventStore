@@ -9,6 +9,7 @@ EventStore::Application.routes.draw do
 
     member do
       get 'show', :to => 'book#show'
+      get 'borrow', :to => 'book#borrow'
     end
   end
 

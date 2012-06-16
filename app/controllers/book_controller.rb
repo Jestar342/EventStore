@@ -47,6 +47,11 @@ class BookController < ApplicationController
   end
 
   def borrow
+    id = params[:id]
+    book = aggregate_repository.find_aggregate_with_id id
+    book.borrow
+    aggregate_repository.save book
+    redirect_to controller: :book, action: :show, id: id, notice: "Book #{book.title} borrowed"
   end
 
   def return
