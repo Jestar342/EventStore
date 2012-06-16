@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f4a576e-6fbc-49f4-9af6-fe1884bf2bd7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/event_listeners/book_returned_listener.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/events/book_returned.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/unit/event_listeners/book_returned_listener_spec.rb" />
-      <change type="DELETED" beforePath="C:\Users\John\RubymineProjects\EventStore\app\views\book\borrow.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\John\RubymineProjects\EventStore\app\views\book\return.html.erb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/show.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/show.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/book_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/book_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/aggregates/book_aggregate.rb" afterPath="$PROJECT_DIR$/app/models/aggregates/book_aggregate.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/event_listeners/book_borrowed_listener.rb" afterPath="$PROJECT_DIR$/app/models/event_listeners/book_borrowed_listener.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/book/show.html.erb" afterPath="$PROJECT_DIR$/app/views/book/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/unit/aggregates/book_aggregate_spec.rb" afterPath="$PROJECT_DIR$/spec/unit/aggregates/book_aggregate_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/unit/controllers/book_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/unit/controllers/book_controller_spec.rb" />
     </list>
     <ignored path="EventStore.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,26 +27,7 @@
     <favorites_list name="EventStore" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/book/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="19" selection-start="448" selection-end="448" vertical-scroll-proportion="-4.3846154">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.scss" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/show.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="26" selection-start="628" selection-end="628" vertical-scroll-proportion="1.0339426">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -804,7 +772,11 @@
       <created>1339882545822</created>
       <updated>1339882545822</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="can now return books.">
+      <created>1339885686984</created>
+      <updated>1339885686984</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -833,11 +805,11 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.67105263" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24051593" sideWeight="0.21710527" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24355084" sideWeight="0.67105263" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24355084" sideWeight="0.5230263" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47697368" sideWeight="0.5159332" order="7" side_tool="true" content_ui="tabs" />
@@ -889,7 +861,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="can now borrow books." />
+    <option name="LAST_COMMIT_MESSAGE" value="can now return books." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -904,6 +876,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="availability? added to Book. Style tweaked." />
     <MESSAGE value="can now borrow books." />
+    <MESSAGE value="can now return books." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1007,16 +980,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/book/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/show.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="448" selection-end="448" vertical-scroll-proportion="-4.3846154">
+        <state line="41" column="26" selection-start="628" selection-end="628" vertical-scroll-proportion="1.8198433">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/show.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/book/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="26" selection-start="628" selection-end="628" vertical-scroll-proportion="1.0339426">
+        <state line="21" column="19" selection-start="448" selection-end="448" vertical-scroll-proportion="0.42857143">
           <folding />
         </state>
       </provider>
