@@ -3,10 +3,14 @@ module EventStore
     attr_accessible :aggregate_type, :id
 
     def self.from_aggregate(aggregate)
-      return SerialisedAggregate.new({
-                                         :id => aggregate.id,
-                                         :aggregate_type => aggregate.class.name,
-                                     })
+      found = with_id(aggregate.id)
+
+      return SerialisedAggregate.create({
+                                             id: aggregate.id,
+                                             aggregate_type: aggregate.class.name,
+                                         }) if found.nil?
+
+      found
     end
 
     def self.with_id(id)

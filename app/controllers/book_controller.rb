@@ -2,6 +2,7 @@ require_relative '../models/aggregates/book_aggregate'
 require_relative '../../lib/repositories/aggregate_repository'
 require_relative '../../lib/broadcasters/event_broadcaster'
 require_relative '../models/event_listeners/book_created_listener'
+require_relative '../models/event_listeners/book_borrowed_listener'
 
 class BookController < ApplicationController
   attr_writer :aggregate_repository
@@ -9,7 +10,8 @@ class BookController < ApplicationController
   def aggregate_repository
     @aggregate_repository ||= -> {
       broadcaster = EventStore::EventBroadcaster.new
-      broadcaster.register_listener BookCreatedListener.new
+      broadcaster.register_listener ::BookCreatedListener.new
+      broadcaster.register_listener ::BookBorrowedListener.new
       EventStore::AggregateRepository.new(
           event_broadcaster: broadcaster
       )
