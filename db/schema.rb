@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615101608) do
+ActiveRecord::Schema.define(:version => 20120619200325) do
 
   create_table "books", :force => true do |t|
     t.string  "title",                       :null => false
@@ -26,10 +26,9 @@ ActiveRecord::Schema.define(:version => 20120615101608) do
   end
 
   create_table "serialised_events", :force => true do |t|
-    t.string   "event_type"
     t.text     "event_yaml"
     t.binary   "sequence_id",  :null => false
-    t.binary   "aggregate_id", :null => false
+    t.integer  "aggregate_id", :null => false
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

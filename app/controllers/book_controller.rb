@@ -67,4 +67,15 @@ class BookController < ApplicationController
   def redirect_to_show(id, notice)
     redirect_to controller: :book, action: :show, id: id, notice: notice
   end
+
+  def events
+    events = aggregate_repository.find_aggregate_with_id(params[:id]).loaded_events
+    respond_to do |format|
+      format.json {
+        render json: (events.collect { |event|
+          {class_name: event.class.name, occured_on: event.created, sequence: event.sequence_id}
+        })
+      }
+    end
+  end
 end

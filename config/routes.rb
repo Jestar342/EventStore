@@ -11,6 +11,7 @@ EventStore::Application.routes.draw do
       get 'show', :to => 'book#show'
       get 'borrow', :to => 'book#borrow'
       get 'return', :to => 'book#return'
+      get 'events', :to => 'book#events'
     end
   end
 

@@ -14,7 +14,9 @@ module EventStore
     def events_for_aggregate(aggregate_id)
       serialised_events = @active_record_class.where(:aggregate_id => aggregate_id).order(:sequence_id)
       serialised_events.collect do | se |
-        YAML.load se.event_yaml
+        event = YAML.load se.event_yaml
+        event.created = se.created_at
+        event
       end
     end
 

@@ -8,6 +8,13 @@
     Book: <%= @book.title %>
 <% end %>
 
+<script type="text/javascript">
+  $(function() {
+    var book_id = "<%= @book.id %>";
+    window.load_history(book_id, $("ul", ".book_history"));
+  });
+</script>
+
 <div class="availability">
   <p>Availability:
     <% if @book.available? %>
@@ -25,4 +32,9 @@
   <% else %>
     <%= link_to "Return", controller: :book, action: :return %>
   <% end %>
+</div>
+
+<div class="book_history">
+  <h4>Book History:</h4>
+  <ul></ul>
 </div>
